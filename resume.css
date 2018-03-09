@@ -1,0 +1,333 @@
+:root {
+    --blue-dark: #117ad4;
+    --blue-light: #5db0f3;
+    --font-color: rgb(250, 252, 255);
+    --font-size: 14px;
+    --shadow-color: #7ebff3;
+}
+/*字体图标设置相关*/
+
+
+/*动画*/
+
+@keyframes lightShadow {
+    from {
+        box-shadow: 0 0 5px 0 var(--shadow-color);
+    }
+    50% {
+        box-shadow: 0 0 5px 5px var(--shadow-color);
+    }
+    to {
+        box-shadow: 0 0 5px 0 var(--shadow-color);
+    }
+}
+
+@keyframes circleShadow {
+    from {
+        box-shadow: 0 0 5px 0 rgba(93, 176, 243, .2);
+    }
+    50% {
+        box-shadow: 0 0 5px 5px rgba(93, 176, 243, .6);
+    }
+    to {
+        box-shadow: 0 0 5px 0 rgba(93, 176, 243, .2);
+    }
+}
+
+@keyframes progress {
+    from{
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+/*媒体查询*/
+
+@media screen and (min-width: 768px) {
+    .page {
+        display: flex;
+    }
+    main.resume {
+        flex: 1;
+    }
+    div.container {
+        flex: 1;
+    }
+}
+
+
+/* 右边部分 = exprice + skill */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/*主要内容*/
+
+.resume {
+    width: 100%;
+    min-width: 311px;
+    max-height: 100%;
+    min-height: 480px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.resume .resume-bg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url(http://coding.imweb.io/img/project/resume/bg.png);
+    background-color: #188eee;
+    flex: 1;
+}
+
+.resume .resume-main {
+    height: 100vh;
+    min-height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--font-color);
+    position: relative;
+}
+
+.resume .resume-avatar {
+    box-sizing: content-box;
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.3);
+    border-radius: 100px;
+    position: relative;
+    margin-bottom: 15px;
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.resume .resume-avatar:hover {
+    animation: 1s lightShadow infinite;
+    animation-fill-mode: forwards;
+}
+
+.resume .resume-avatar .resume-picture {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+}
+
+.resume .resume-name {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 2;
+}
+
+.resume .resume-motto {
+    font-size: 17px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.resume .resume-contact {
+    font-size: var(--font-size);
+    margin-bottom: 20px;
+}
+
+.resume .resume-contact a {
+    color: var(--font-color);
+}
+
+.resume .resume-contact li {
+    margin-bottom: 10px;
+    vertical-align: middle;
+}
+
+.resume-contact span,
+.resume-contact a {
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+}
+
+.resume .resume-icon {
+    border: 1px solid var(--font-color);
+    border-radius: 13px;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.resume-others {
+    width: 310px;
+    height: 64px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    font-size: var(--font-size);
+}
+
+.resume-others p {
+    width: 50%;
+    float: left;
+    padding: 5px 0 5px 12px;
+    font-size: 12px;
+}
+
+
+
+
+/*版块*/
+
+.exprience,
+.skill {
+    min-width: 311px;
+    z-index: 0;
+    margin-top: 28px;
+}
+
+.exprience h2,
+.skill h2 {
+    position: relative;
+    width: 100px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #f5f5f5;
+    z-index: 1;
+    color: #46a3ef;
+    font-size: 20px;
+    margin-bottom: 28px;
+}
+
+.exprience::before,
+.skill::before {
+    display: block;
+    content: "";
+    position: relative;
+    top: 22px;
+    height: 1px;
+    background-color: rgb(204, 204, 204);
+    z-index: 0;
+}
+
+
+
+
+/*工作经历*/
+
+.exprience .circle {
+    position: absolute;
+    box-sizing: content-box;
+    width: 12px;
+    height: 12px;
+    background-color: var(--blue-light);
+    background-clip: content-box;
+    border-radius: 50%;
+    top: -6px;
+    left: -12px;
+    border: 5px solid rgba(93, 176, 243, .2);
+}
+
+.exprience .exprience-item:hover .circle {
+    left: -7px;
+    top: -1px;
+    border: none;
+    animation: 1s circleShadow ease infinite;
+}
+
+.exprience .exprience-item {
+    position: relative;
+    margin-left: 20px;
+    padding-left: 20px;
+    border-left: 1px solid #999;
+}
+
+.exprience .exprience-title {
+    color: #333;
+    font-size: 15px;
+    line-height: 22px;
+}
+
+.exprience .exprience-content {
+    padding: 10px 20px 20px 0;
+    color: #999;
+}
+
+.exprience div:last-child {
+    border-image: linear-gradient(to bottom, #999 65%, #f5f5f5 100%) 1;
+}
+
+
+
+
+
+/*技能特长*/
+
+.skill .skill-item {
+    position: relative;
+    height: 80px;
+    margin: 0 20px;
+}
+
+.skill .skill-name {
+    font-size: 15px;
+    color: #333;
+}
+
+.skill .skill-description {
+    width: 100%;
+    color: #999;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.skill .skill-level {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    color: #999;
+    border: 1px solid #999;
+    padding: 0 6px;
+    font-size: 12px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.skill .skill-item:hover .skill-level {
+    color: var(--blue-light);
+    border-color: var(--blue-light);
+}
+
+.skill .skill-item:hover .skill-name {
+    color: var(--blue-light);
+}
+
+.skill .progress-warp {
+    height: 10px;
+    background-color: #999;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.skill .progress {
+    height: 100%;
+    background: linear-gradient(to right,#5db0f3,#5db0f3);
+    transform-origin: left center;
+}
+
+
+.skill .progress-warp:hover .progress{
+    animation: progress 1s;
+}
