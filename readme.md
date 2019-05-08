@@ -27,3 +27,5 @@
 - 可以不考虑兼容问题，最新版本的 chrome 浏览器支持即可
 
 PS：做好项目之后，你也可以写个简单的总结，对之前的知识进行一个回顾吸收。如果有什么疑问，也可以到我们的 [issue](http://git.imweb.io/imweb-teacher/resume/issues) 上进行提问（提问之前，可以先看下是否有人曾经提过类似的问题，减少没必要的重复问题）。
+
+访问:https://liudecai.github.io/
